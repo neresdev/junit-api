@@ -1,0 +1,30 @@
+2022-08-12 14:06:55.764  INFO 41854 --- [main] b.c.j.ApiJunitExmpleApplication          : Starting ApiJunitExmpleApplication using Java 11.0.16 on 202110-NT-DAVIDNERES with PID 41854 (/home/neres/study/java/jample/target/classes started by neres in /home/neres/study/java/jample)
+2022-08-12 14:06:55.767  INFO 41854 --- [main] b.c.j.ApiJunitExmpleApplication          : The following 1 profile is active: "local"
+2022-08-12 14:06:56.734  INFO 41854 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-12 14:06:56.791  INFO 41854 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 1 JPA repository interfaces.
+2022-08-12 14:06:57.423  INFO 41854 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-12 14:06:57.435  INFO 41854 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-12 14:06:57.435  INFO 41854 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-12 14:06:57.531  INFO 41854 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-12 14:06:57.531  INFO 41854 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1706 ms
+2022-08-12 14:06:57.582  INFO 41854 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-08-12 14:06:57.876  INFO 41854 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-08-12 14:06:57.890  INFO 41854 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2022-08-12 14:06:58.035  INFO 41854 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-12 14:06:58.100  INFO 41854 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-08-12 14:06:58.321  INFO 41854 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-12 14:06:58.469  INFO 41854 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-08-12 14:06:59.186  INFO 41854 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-12 14:06:59.195  INFO 41854 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-12 14:06:59.745  WARN 41854 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-12 14:07:00.159  INFO 41854 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-12 14:07:00.173  INFO 41854 --- [main] b.c.j.ApiJunitExmpleApplication          : Started ApiJunitExmpleApplication in 5.021 seconds (JVM running for 5.726)
+2022-08-12 14:07:12.727  INFO 41854 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-12 14:07:12.728  INFO 41854 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-08-12 14:07:12.729  INFO 41854 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-08-12 14:07:12.760  INFO 41854 --- [http-nio-8080-exec-1] b.c.junitexample.resource.UsersResource  : vamo q vamo
+2022-08-12 14:07:12.764  INFO 41854 --- [http-nio-8080-exec-1] b.c.junitexample.resource.UsersResource  : vamo q vamo em outro arquivo
+2022-08-12 14:07:35.794  INFO 41854 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-12 14:07:35.794  INFO 41854 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-08-12 14:07:35.997  INFO 41854 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-08-12 14:07:36.003  INFO 41854 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
