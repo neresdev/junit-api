@@ -17,6 +17,8 @@ import java.util.Optional;
 @Service
 public class UserServiceImpl implements UsersService {
 
+    public static final String NOT_FOUND_MESSAGE = "Objeto nao encontrado";
+
     @Autowired
     private UsersRepository repository;
 
@@ -26,7 +28,7 @@ public class UserServiceImpl implements UsersService {
     @Override
     public Users findById(Integer id) {
         Optional<Users> obj = repository.findById(id);
-        return obj.orElseThrow(() -> new ObjectNotFoundException("Usuário " + id + " não encontrado!"));
+        return obj.orElseThrow(() -> new ObjectNotFoundException(NOT_FOUND_MESSAGE));
     }
 
     public List<Users> findAll(){

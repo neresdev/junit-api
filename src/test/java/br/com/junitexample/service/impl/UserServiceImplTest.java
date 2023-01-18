@@ -3,6 +3,7 @@ package br.com.junitexample.service.impl;
 import br.com.junitexample.domain.DTO.UsersDTO;
 import br.com.junitexample.domain.Users;
 import br.com.junitexample.repositories.UsersRepository;
+import br.com.junitexample.service.exceptions.ObjectNotFoundException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -27,10 +28,13 @@ class UserServiceImplTest {
     public static final String NAME = "Deivao";
     public static final String EMAIL = "davidneres4554@gmail.com";
     public static final String PASSWORD = "123";
-    @InjectMocks // cria uma insância real de UserServiceImpl
+
+    public static final String NOT_FOUND_MESSAGE = "Objeto nao encontrado";
+
+    @InjectMocks // cria uma insancia real de UserServiceImpl
     private UserServiceImpl service;
 
-    @Mock // instância "fake"
+    @Mock // instancia "fake"
     private UsersRepository repository;
 
     @Mock
@@ -58,6 +62,17 @@ class UserServiceImplTest {
         assertEquals(ID, response.getId());
         assertEquals(NAME, response.getName());
         assertEquals(EMAIL, response.getEmail());
+    }
+
+    @Test
+    void whenFindByIdThenReturnAnObjectNotFoundException(){
+        when(repository.findById(anyInt())).thenThrow(new ObjectNotFoundException(NOT_FOUND_MESSAGE));
+        try{
+            service.findById(ID);
+        }catch (Exception ex){
+            assertEquals(ObjectNotFoundException.class, ex.getClass());
+            assertEquals(NOT_FOUND_MESSAGE, ex.getMessage());
+        }
     }
 
     @Test
