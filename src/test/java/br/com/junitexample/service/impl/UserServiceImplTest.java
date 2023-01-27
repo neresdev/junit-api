@@ -124,7 +124,17 @@ class UserServiceImplTest {
     }
 
     @Test
-    void update() {
+    void whenUpdateThenReturnSuccess() {
+        when(repository.save(any())).thenReturn(user);
+
+        Users response = service.update(userDTO);
+
+        assertNotNull(response);
+        assertEquals(Users.class, response.getClass());
+        assertEquals(ID, response.getId());
+        assertEquals(NAME, response.getName());
+        assertEquals(EMAIL, response.getEmail());
+        assertEquals(PASSWORD, response.getPassword());
     }
 
     @Test
