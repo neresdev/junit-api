@@ -19,6 +19,7 @@ import java.util.Optional;
 
 import static org.hibernate.validator.internal.util.Contracts.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.*;
 
@@ -31,7 +32,7 @@ class UserServiceImplTest {
     public static final String EMAIL = "davidneres4554@gmail.com";
     public static final String PASSWORD = "123";
 
-    public static final String NOT_FOUND_MESSAGE = "Objeto nao encontrado";
+    public static final String NOT_FOUND_MESSAGE = "Objeto naoo encontrado";
     public static final String DATA_INTEGRATY_VIOLATION_EXCEPTION_MESSAGE = "Objeto nao encontrado";
     public static final String EMAIL_ALREADY_REGISTRED_MESSAGE = "E-mail já cadastrado no sistema";
     public static final int INDEX = 0;
@@ -158,6 +159,18 @@ class UserServiceImplTest {
         doNothing().when(repository).deleteById(anyInt());
         service.delete(ID);
         verify(repository, times(1)).deleteById(anyInt());
+
+    }
+
+    @Test
+    void deleteWithObjectNotFoundException() {
+        when(repository.findById(anyInt())).thenThrow(new ObjectNotFoundException(NOT_FOUND_MESSAGE));
+        try{
+            service.delete(ID);
+        }catch (Exception e){
+            assertEquals(ObjectNotFoundException.class, e.getClass());
+            assertEquals(NOT_FOUND_MESSAGE, e.getMessage());
+        }
 
     }
 
