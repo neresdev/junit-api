@@ -120,7 +120,7 @@ class UserServiceImplTest {
             service.create(userDTO);
         }catch (Exception ex){
             assertEquals(DataIntegratyViolationException.class, ex.getClass());
-            assertEquals(DATA_INTEGRATY_VIOLATION_EXCEPTION_MESSAGE, ex.getMessage());
+            assertEquals(EMAIL_ALREADY_REGISTRED_MESSAGE, ex.getMessage());
         }
 
     }
@@ -145,7 +145,7 @@ class UserServiceImplTest {
 
         try{
             optionalUser.ifPresent(user -> user.setId(2));
-            service.create(userDTO);
+            service.update(userDTO);
         }catch (Exception ex){
             assertEquals(DataIntegratyViolationException.class, ex.getClass());
             assertEquals(EMAIL_ALREADY_REGISTRED_MESSAGE, ex.getMessage());
@@ -178,6 +178,5 @@ class UserServiceImplTest {
         user = new Users(ID, NAME, EMAIL, PASSWORD);
         userDTO = new UsersDTO(ID, NAME, EMAIL, PASSWORD);
         optionalUser = Optional.of(new Users(ID, NAME, EMAIL, PASSWORD));
-
     }
 }
