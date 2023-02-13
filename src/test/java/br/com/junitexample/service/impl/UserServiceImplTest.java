@@ -34,7 +34,7 @@ class UserServiceImplTest {
 
     public static final String NOT_FOUND_MESSAGE = "Objeto naoo encontrado";
     public static final String DATA_INTEGRATY_VIOLATION_EXCEPTION_MESSAGE = "Objeto nao encontrado";
-    public static final String EMAIL_ALREADY_REGISTRED_MESSAGE = "E-mail já cadastrado no sistema";
+    public static final String EMAIL_ALREADY_REGISTRED_MESSAGE = "E-mail ja cadastrado no sistema";
     public static final int INDEX = 0;
 
     @InjectMocks // cria uma insancia real de UserServiceImpl
