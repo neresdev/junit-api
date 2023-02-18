@@ -47,8 +47,9 @@ class UsersResourceTest {
     @Mock
     private ModelMapper mapper;
 
-    private Users user;
-    private UsersDTO userDTO;
+    private Users user = new Users();
+
+    private UsersDTO userDTO = new UsersDTO();
 
 
     @InjectMocks
